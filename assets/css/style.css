@@ -202,14 +202,14 @@ p:last-child { margin-bottom: 0; }
 .site-header__inner {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(16px, 2vw, 32px);
   min-height: 92px;
 }
 .site-header.is-stuck .site-header__inner { min-height: 74px; }
 .site-header__inner { transition: min-height .4s var(--ease); }
 
 /* Brand */
-.brand { display: flex; align-items: center; gap: 16px; margin-right: auto; }
+.brand { display: flex; flex: none; align-items: center; gap: 14px; margin-right: auto; }
 .brand__seal { width: 54px; height: auto; flex: none; }
 .brand__name {
   font-family: var(--serif);
@@ -222,7 +222,7 @@ p:last-child { margin-bottom: 0; }
 .brand__hanzi { display: block; margin-top: 5px; font-size: 11px; letter-spacing: .42em; }
 
 /* Nav */
-.nav { display: flex; align-items: center; gap: clamp(18px, 2.2vw, 34px); }
+.nav { display: flex; align-items: center; gap: clamp(13px, 1.7vw, 28px); }
 .nav__link {
   position: relative;
   font-size: 12.5px;
@@ -898,4 +898,109 @@ p:last-child { margin-bottom: 0; }
     transition-duration: .01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* ==========================================================================
+   Multi-page chrome + bilingual support
+   ========================================================================== */
+
+/* ------------------------------------------------------------ page head -- */
+.page-head {
+  padding: calc(92px + clamp(52px, 6.5vw, 92px)) 0 clamp(46px, 5.5vw, 76px);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse 90% 130% at 10% 0%, rgba(201, 162, 74, .11), transparent 62%),
+    var(--ink);
+}
+.page-head__title {
+  font-size: clamp(2.35rem, 5vw, 3.8rem);
+  max-width: 20ch;
+}
+.page-head .lede { margin-top: 22px; }
+
+/* ------------------------------------------------------ language toggle -- */
+.lang-btn {
+  flex: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--gold-soft);
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  padding: 9px 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease);
+}
+.lang-btn:hover {
+  border-color: var(--gold);
+  background: rgba(201, 162, 74, .10);
+  color: var(--gold-soft);
+}
+
+/* --------------------------------------------------------- CJK typography */
+:root {
+  --serif-zh: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --sans-zh:  "Noto Sans SC", "PingFang SC", "Hiragino Sans GB",
+              "Microsoft YaHei", sans-serif;
+}
+
+html[lang="zh-Hans"] body { font-family: var(--sans-zh); }
+
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] h2,
+html[lang="zh-Hans"] h3,
+html[lang="zh-Hans"] h4,
+html[lang="zh-Hans"] .tile__title,
+html[lang="zh-Hans"] .price__value,
+html[lang="zh-Hans"] .faq__q {
+  font-family: var(--serif-zh);
+  line-height: 1.32;
+}
+
+/* The brand lockup stays in its Latin face in both languages. */
+html[lang="zh-Hans"] .brand__name { font-family: var(--serif); }
+
+/* Synthesised italics look wrong in CJK — emphasise with colour instead. */
+html[lang="zh-Hans"] .hero__title em {
+  font-style: normal;
+  color: var(--gold-soft);
+}
+html[lang="zh-Hans"] .about__motto { font-style: normal; }
+
+/* Wide Latin tracking is too loose for Han characters. */
+html[lang="zh-Hans"] .btn,
+html[lang="zh-Hans"] .nav__link,
+html[lang="zh-Hans"] .eyebrow,
+html[lang="zh-Hans"] .link-arrow,
+html[lang="zh-Hans"] .footer__heading,
+html[lang="zh-Hans"] .price__label,
+html[lang="zh-Hans"] .service__index { letter-spacing: .1em; }
+
+html[lang="zh-Hans"] .hero__title,
+html[lang="zh-Hans"] .page-head__title,
+html[lang="zh-Hans"] .section-title,
+html[lang="zh-Hans"] .cta__title { letter-spacing: .02em; }
+
+/* Chinese runs shorter than English — let headings breathe wider. */
+html[lang="zh-Hans"] .section-title,
+html[lang="zh-Hans"] .page-head__title { max-width: 24ch; }
+
+@media (max-width: 900px) {
+  .nav .lang-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px;
+    font-size: 12px;
+  }
+  .nav .btn { margin-top: 12px; }
+}
+
+/* Keep the header on one line as the nav grows. */
+@media (max-width: 1300px) {
+  .nav__link, .lang-btn { font-size: 11.5px; }
+  .btn--sm { padding: 11px 18px; font-size: 11px; }
+  .brand__name { font-size: 19px; }
+  .brand__seal { width: 48px; }
 }
