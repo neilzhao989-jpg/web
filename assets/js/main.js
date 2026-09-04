@@ -9,6 +9,26 @@
   var nav    = document.getElementById('nav');
   var burger = document.getElementById('burger');
 
+  /* Reveal is set up before anything else: if a later block throws, content
+     must never be left stranded at opacity 0. */
+  /* ---------------------------------------------------- reveal on scroll */
+  var reveals = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+
   /* --------------------------------------------------------------- i18n */
   function store(lang) {
     try { localStorage.setItem(STORE, lang); } catch (e) {}
@@ -47,12 +67,15 @@
     store(lang);
   }
 
-  setLang(stored() === 'zh' ? 'zh' : 'en');
+  // A failure here must not take down the header, menu or reveal below.
+  try { setLang(stored() === 'zh' ? 'zh' : 'en'); } catch (e) {}
 
   var langBtn = document.getElementById('lang-toggle');
   if (langBtn) {
     langBtn.addEventListener('click', function () {
-      setLang(document.documentElement.lang === 'zh-Hans' ? 'en' : 'zh');
+      try {
+        setLang(document.documentElement.lang === 'zh-Hans' ? 'en' : 'zh');
+      } catch (e) {}
     });
   }
 
@@ -108,23 +131,6 @@
     closeDropdowns();
     if (nav.classList.contains('is-open')) setMenu(false);
   });
-
-  /* ---------------------------------------------------- reveal on scroll */
-  var reveals = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
-
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add('is-visible'); });
-  }
 
   /* ------------------------------------------------------- one FAQ open */
   var faqs = Array.prototype.slice.call(document.querySelectorAll('.faq__item'));

@@ -13,10 +13,12 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/i18n.js"></script>
 <script>
+  // Mark that scripting is live, so reveal-on-scroll may hide content. If this
+  // never runs, everything stays visible rather than stranded at opacity 0.
+  document.documentElement.className += ' js';
   // Apply the stored language before first paint to avoid a flash of English.
   try {
-    var l = localStorage.getItem('aa-lang');
-    if (l === 'zh') document.documentElement.lang = 'zh-Hans';
+    if (localStorage.getItem('aa-lang') === 'zh') document.documentElement.lang = 'zh-Hans';
   } catch (e) {}
 </script>
 </head>
