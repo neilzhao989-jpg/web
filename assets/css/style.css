@@ -958,8 +958,14 @@ html[lang="zh-Hans"] .tile__title,
 html[lang="zh-Hans"] .price__value,
 html[lang="zh-Hans"] .faq__q {
   font-family: var(--serif-zh);
-  line-height: 1.32;
+  line-height: 1.34;
 }
+
+/* These force the Latin stack, so name the CJK stack explicitly too. */
+html[lang="zh-Hans"] .hero__tagline,
+html[lang="zh-Hans"] .btn,
+html[lang="zh-Hans"] .lang-btn,
+html[lang="zh-Hans"] .eyebrow { font-family: var(--sans-zh); }
 
 /* The brand lockup stays in its Latin face in both languages. */
 html[lang="zh-Hans"] .brand__name { font-family: var(--serif); }
