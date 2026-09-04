@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-page="index">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auric Aura Fengshui — Traditional Chinese Feng Shui for Modern Living</title>
+<meta name="description" content="Personalized classical Chinese Feng Shui and BaZi consultations for homes, businesses and real-estate decisions.">
+<meta name="theme-color" content="#0E0C09">
+<link rel="icon" href="assets/img/seal.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&family=Noto+Serif+SC:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=1edd63f2">
+<script src="assets/js/i18n.js?v=f6fdb236"></script>
+<script>
+  // Mark that scripting is live, so reveal-on-scroll may hide content. If this
+  // never runs, everything stays visible rather than stranded at opacity 0.
+  document.documentElement.className += ' js';
+  // Apply the stored language before first paint to avoid a flash of English.
+  try {
+    if (localStorage.getItem('aa-lang') === 'zh') document.documentElement.lang = 'zh-Hans';
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="brand" href="index.html" data-i18n-aria="brand.aria" aria-label="Auric Aura Fengshui — home">
+      <img class="brand__seal" src="assets/img/seal.png" alt="" width="82" height="73">
+      <span>
+        <span class="brand__name">Auric Aura<br>Fengshui</span>
+        <span class="hanzi brand__hanzi" aria-hidden="true">金 熷 风 水</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="nav__link is-active" href="index.html" data-i18n="nav.home">Home</a>
+      <div class="nav__item" data-dropdown>
+        <button class="nav__link nav__toggle" type="button" aria-expanded="false" aria-controls="services-menu">
+          <span data-i18n="nav.services">Services</span>
+          <svg class="nav__caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4"/>
+          </svg>
+        </button>
+        <ul class="nav__menu" id="services-menu">
+          <li><a href="services.html#residential" data-i18n="menu.res">Residential Feng Shui</a></li>
+          <li><a href="services.html#home-buying" data-i18n="menu.buy">Home Buying Assessment</a></li>
+          <li><a href="services.html#business" data-i18n="menu.biz">Business Feng Shui</a></li>
+          <li><a href="services.html#bazi" data-i18n="menu.bazi">BaZi — Four Pillars</a></li>
+          <li><a href="services.html#real-estate" data-i18n="menu.re">Feng Shui for Real Estate</a></li>
+        </ul>
+      </div>
+      <a class="nav__link" href="process.html" data-i18n="nav.process">Process</a>
+      <a class="nav__link" href="sample-report.html" data-i18n="nav.report">Sample Report</a>
+      <a class="nav__link" href="about.html" data-i18n="nav.about">About</a>
+      <a class="nav__link" href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <button class="lang-btn" id="lang-toggle" type="button" data-i18n="lang.toggle">中文</button>
+      <a class="btn btn--gold btn--sm" href="contact.html" data-i18n="btn.book">Book a Consultation</a>
+    </nav>
+
+    <button class="burger" id="burger" type="button" data-i18n-aria="nav.open" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero__media">
+      <img src="assets/img/hero-living-room.jpg" alt="A sunlit modern living room opening onto a Chinese garden, with a luopan compass resting on the table" fetchpriority="high">
+    </div>
+
+    <div class="shell">
+     <div class="hero__content">
+      <h1 class="hero__title" data-i18n="hero.title">Traditional Chinese<br>Feng Shui <em>for</em><br>Modern Living</h1>
+
+      <p class="hero__tagline">
+        <span data-i18n="hero.tag1">Classical Wisdom.</span>
+        <span data-i18n="hero.tag2">Balanced Spaces.</span>
+        <span data-i18n="hero.tag3">Better Life.</span>
+      </p>
+
+      <p class="hero__text" data-i18n="hero.text">We help you create harmony and vitality in your home, business and life through traditional Feng Shui and BaZi.</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="contact.html" data-i18n="btn.book">Book a Consultation</a>
+        <a class="btn btn--ghost" href="services.html" data-i18n="btn.services">Explore Services</a>
+      </div>
+     </div>
+    </div>
+  </section>
+
+  <section class="tiles" aria-label="Consultation types">
+    <a class="tile" href="services.html#residential">
+      <img src="assets/img/service-residential.jpg" alt="A contemporary home glowing at dusk" loading="lazy">
+      <span>
+        <span class="tile__title" data-i18n="tile.res.title">Residential Feng Shui</span>
+        <span class="tile__text" data-i18n="tile.res.text">Create a harmonious and supportive home environment.</span>
+        <span class="tile__arrow" aria-hidden="true">&#8594;</span>
+      </span>
+    </a>
+    <a class="tile" href="services.html#business">
+      <img src="assets/img/service-business.jpg" alt="An open-plan office overlooking a city skyline" loading="lazy">
+      <span>
+        <span class="tile__title" data-i18n="tile.biz.title">Business Feng Shui</span>
+        <span class="tile__text" data-i18n="tile.biz.text">Enhance energy flow and support growth and success.</span>
+        <span class="tile__arrow" aria-hidden="true">&#8594;</span>
+      </span>
+    </a>
+    <a class="tile" href="services.html#real-estate">
+      <img src="assets/img/service-realestate.jpg" alt="A brass compass and pen resting on an architectural floor plan" loading="lazy">
+      <span>
+        <span class="tile__title" data-i18n="tile.re.title">Real Estate Feng Shui</span>
+        <span class="tile__text" data-i18n="tile.re.text">Make informed decisions before you buy or invest.</span>
+        <span class="tile__arrow" aria-hidden="true">&#8594;</span>
+      </span>
+    </a>
+    <a class="tile" href="services.html#bazi">
+      <img src="assets/img/service-bazi.jpg" alt="Chinese characters inscribed on aged bamboo slips" loading="lazy">
+      <span>
+        <span class="tile__title" data-i18n="tile.bazi.title">BaZi Consultation</span>
+        <span class="tile__text" data-i18n="tile.bazi.text">Understand your life pattern and timing with BaZi.</span>
+        <span class="tile__arrow" aria-hidden="true">&#8594;</span>
+      </span>
+    </a>
+  </section>
+
+  <section class="cta">
+    <div class="shell">
+      <p class="eyebrow" data-i18n="cta.eyebrow" style="display:inline-block">Begin Your Consultation</p>
+      <h2 class="cta__title" data-i18n="cta.title">Your property is unique. Your consultation should be too.</h2>
+      <p class="cta__text" data-i18n="cta.text">Whether you are choosing a new home, improving your current space, planning a business location, or exploring BaZi, we can help you examine the situation through the perspective of traditional Chinese Feng Shui.</p>
+      <div class="cta__actions">
+        <a class="btn btn--gold" href="contact.html" data-i18n="btn.book">Book a Consultation</a>
+        <a class="btn btn--ghost" href="services.html" data-i18n="btn.services">Explore Services</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a class="brand" href="index.html">
+          <img class="brand__seal" src="assets/img/seal.png" alt="" width="82" height="73">
+          <span>
+            <span class="brand__name">Auric Aura<br>Fengshui</span>
+            <span class="hanzi brand__hanzi" aria-hidden="true">金 熷 风 水</span>
+          </span>
+        </a>
+        <p class="site-footer__blurb" data-i18n="foot.blurb">Classical Feng Shui &middot; BaZi &middot; Residential &middot; Real Estate &middot; Business</p>
+      </div>
+
+      <div>
+        <h2 class="footer__heading" data-i18n="foot.services">Services</h2>
+        <ul class="footer__list">
+          <li><a href="services.html#residential" data-i18n="menu.res">Residential Feng Shui</a></li>
+          <li><a href="services.html#home-buying" data-i18n="menu.buy">Home Buying Assessment</a></li>
+          <li><a href="services.html#business" data-i18n="menu.biz">Business Feng Shui</a></li>
+          <li><a href="services.html#bazi" data-i18n="menu.bazi">BaZi — Four Pillars</a></li>
+          <li><a href="services.html#real-estate" data-i18n="menu.re">Feng Shui for Real Estate</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer__heading" data-i18n="foot.explore">Explore</h2>
+        <ul class="footer__list">
+          <li><a href="process.html" data-i18n="foot.process">How It Works</a></li>
+          <li><a href="process.html#receive" data-i18n="foot.receive">What You Receive</a></li>
+          <li><a href="sample-report.html" data-i18n="foot.report">Sample Report</a></li>
+          <li><a href="about.html" data-i18n="foot.about">About & Approach</a></li>
+          <li><a href="faq.html" data-i18n="foot.faq">FAQ</a></li>
+          <li><a href="contact.html" data-i18n="foot.contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="disclaimer" data-i18n="foot.disclaimer">
+      Feng Shui and BaZi consultations provide perspectives based on traditional Chinese practices.
+      They are not substitutes for licensed architectural, engineering, medical, legal, financial or
+      other regulated professional advice, and they do not guarantee specific future events or
+      outcomes.
+    </p>
+
+    <div class="site-footer__bottom">
+      <span>&copy; <span id="year">2026</span> Auric Aura Fengshui. <span data-i18n="foot.rights">All rights reserved.</span></span>
+      <span data-i18n="foot.motto">Awaken the aura, ignite vitality.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=3825f6ab" defer></script>
+</body>
+</html>
