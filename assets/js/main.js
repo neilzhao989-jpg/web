@@ -80,11 +80,37 @@
   }
 
   /* ------------------------------------------------ sticky header state */
+  /* Shrinks once off the top, then slides away on downward scroll and returns
+     on the first upward move — reading gets the full viewport, navigation is
+     never more than a flick away. */
+  var HIDE_AFTER = 140;   // don't retract until clear of the header itself
+  var JITTER = 6;         // ignore trackpad noise
+  var lastY = window.scrollY;
+
   function syncHeader() {
-    header.classList.toggle('is-stuck', window.scrollY > 24);
+    var y = window.scrollY;
+    header.classList.toggle('is-stuck', y > 24);
+
+    var delta = y - lastY;
+    if (Math.abs(delta) < JITTER) return;
+
+    // The mobile drawer is a child of the header, so retracting while it is
+    // open would drag the drawer off screen with it. Same for keyboard focus
+    // landing inside the header.
+    var pinned = nav.classList.contains('is-open') ||
+                 header.contains(document.activeElement);
+
+    header.classList.toggle('is-hidden', delta > 0 && y > HIDE_AFTER && !pinned);
+    lastY = y;
   }
+
   syncHeader();
   window.addEventListener('scroll', syncHeader, { passive: true });
+
+  // Never leave it retracted when something inside it takes focus.
+  header.addEventListener('focusin', function () {
+    header.classList.remove('is-hidden');
+  });
 
   /* ------------------------------------------------------- mobile menu */
   function setMenu(open) {
