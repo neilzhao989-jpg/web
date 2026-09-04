@@ -51,5 +51,5 @@ Any static host works. For GitHub Pages: **Settings → Pages → Deploy from a 
 
 ## Content note
 
-Copy is taken from the Auric Aura Fengshui brief. Prices are in CAD. The contact address
-(`hello@auricaurafengshui.com`) is a placeholder — swap it for the real one before going live.
+Copy is taken from the Auric Aura Fengshui brief. Prices are in CAD. Enquiries go to
+<Robotechai2024@gmail.com>.
