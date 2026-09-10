@@ -2,7 +2,7 @@
    English lives in the HTML; this file supplies the zh replacements. */
 window.AA_ZH = {
   "ab.motto": "唤醒气场，焕发生机。",
-  "ab.p1": "金熷风水的成立，是为了将中国传统风水的学理，带入当代的住宅、事业与地产决策之中。",
+  "ab.p1": "金熠风水的成立，是为了将中国传统风水的学理，带入当代的住宅、事业与地产决策之中。",
   "ab.p2": "我们尊重中国经典方法，同时以清晰、有条理且切合实际的形式呈现分析，让现代客户易于理解与运用。",
   "ab.p3": "我们不套用一体适用的规则；每一次咨询都会考量该处房产本身、其环境、坐向、时运，以及在相关情况下，使用该空间的人。",
   "ab.title": "传统学理，以现代客户能用的方式呈现",
@@ -10,7 +10,7 @@ window.AA_ZH = {
   "ap.lede": "风水远不只是室内装饰。传统中国风水研究人、空间、方位、时间与周遭环境之间的关系。咨询中可能运用的经典方法包括：",
   "ap.note": "每一处房产、每一个人都不相同。因此我们的建议皆为个别拟定，而非套用通用清单。",
   "ap.title": "古法智慧 · 现代空间 · 个人洞察",
-  "brand.aria": "金熷风水 — 首页",
+  "brand.aria": "金熠风水 — 首页",
   "btn.book": "预约咨询",
   "btn.services": "了解服务",
   "ch.1": "房产概览",
@@ -106,7 +106,7 @@ window.AA_ZH = {
   "nav.process": "咨询流程",
   "nav.report": "报告样本",
   "nav.services": "服务",
-  "ph.about.eyebrow": "关于金熷风水",
+  "ph.about.eyebrow": "关于金熠风水",
   "ph.about.title": "经典学理 · 个别分析 · 实际应用",
   "ph.contact.eyebrow": "开始您的咨询",
   "ph.contact.title": "每一处房产都独一无二，您的咨询亦应如此",
@@ -234,11 +234,11 @@ window.AA_ZH = {
   "tile.re.title": "地产风水",
   "tile.res.text": "营造和谐而有助益的居家环境。",
   "tile.res.title": "住宅风水",
-  "title.about": "关于与方法 — 金熷风水",
-  "title.contact": "联络我们 — 金熷风水",
-  "title.faq": "常见问题 — 金熷风水",
-  "title.index": "金熷风水 — 传统中国风水，融入现代生活",
-  "title.process": "咨询流程 — 金熷风水",
-  "title.sample-report": "报告样本 — 金熷风水",
-  "title.services": "服务 — 金熷风水"
+  "title.about": "关于与方法 — 金熠风水",
+  "title.contact": "联络我们 — 金熠风水",
+  "title.faq": "常见问题 — 金熠风水",
+  "title.index": "金熠风水 — 传统中国风水，融入现代生活",
+  "title.process": "咨询流程 — 金熠风水",
+  "title.sample-report": "报告样本 — 金熠风水",
+  "title.services": "服务 — 金熠风水"
 };

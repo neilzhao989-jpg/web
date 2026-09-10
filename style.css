@@ -214,7 +214,7 @@ p:last-child { margin-bottom: 0; }
 
 /* Brand */
 .brand { display: flex; flex: none; align-items: center; gap: 14px; margin-right: auto; }
-.brand__seal { width: 54px; height: auto; flex: none; }
+.brand__seal { width: 60px; height: auto; flex: none; }
 .brand__name {
   font-family: var(--serif);
   font-size: 21px;
@@ -891,7 +891,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .hero { min-height: 0; padding: 130px 0 72px; }
   .hero__title { font-size: clamp(2.35rem, 9.4vw, 3.1rem); }
   .hero__tagline { gap: 4px 16px; }
-  .brand__seal { width: 44px; }
+  .brand__seal { width: 48px; }
   .brand__name { font-size: 17px; }
   .site-footer__top { grid-template-columns: 1fr; }
   .pricing { flex-direction: column; gap: 16px; }
@@ -1014,5 +1014,5 @@ html[lang="zh-Hans"] .page-head__title { max-width: 24ch; }
   .nav__link, .lang-btn { font-size: 11.5px; }
   .btn--sm { padding: 11px 18px; font-size: 11px; }
   .brand__name { font-size: 19px; }
-  .brand__seal { width: 48px; }
+  .brand__seal { width: 54px; }
 }
