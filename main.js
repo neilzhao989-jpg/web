@@ -117,7 +117,10 @@
     nav.classList.toggle('is-open', open);
     burger.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
+    // Suppresses the header's retract transform: see the note in the stylesheet.
+    document.body.classList.toggle('nav-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
+    if (open) header.classList.remove('is-hidden');
   }
 
   burger.addEventListener('click', function () {

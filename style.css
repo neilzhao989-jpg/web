@@ -194,11 +194,14 @@ p:last-child { margin-bottom: 0; }
   transition: background .4s var(--ease), border-color .4s var(--ease),
               backdrop-filter .4s var(--ease), transform .45s var(--ease);
   border-bottom: 1px solid transparent;
-  will-change: transform;
 }
 
-/* Retracted while scrolling down; returns on the first upward move. */
-.site-header.is-hidden { transform: translateY(-100%); }
+/* Retracted while scrolling down; returns on the first upward move.
+   Deliberately not `will-change: transform`, and deliberately skipped while the
+   drawer is open: a transformed (or will-change'd) ancestor becomes the
+   containing block for `position: fixed` descendants, which would collapse the
+   drawer to the height of the header instead of the viewport. */
+body:not(.nav-open) .site-header.is-hidden { transform: translateY(-100%); }
 .site-header.is-stuck {
   background: rgba(4, 25, 15, .93);
   backdrop-filter: blur(14px);
@@ -852,8 +855,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     width: min(360px, 86vw);
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
-    padding: 116px 34px 40px;
+    gap: 0;
+    padding: 88px 30px max(20px, env(safe-area-inset-bottom));
     background: rgba(4, 25, 15, .985);
     backdrop-filter: blur(18px);
     border-left: 1px solid var(--line);
@@ -863,7 +866,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   }
   .nav.is-open { transform: none; }
   .nav__item, .nav__link, .nav__toggle { width: 100%; }
-  .nav__link { padding: 15px 0; font-size: 13px; }
+  /* Tracks viewport height so the whole menu fits on short phones. */
+  .nav__link { padding: clamp(8px, 1.55vh, 15px) 0; font-size: 13px; }
   .nav__toggle { justify-content: space-between; }
 
   .nav__menu {
@@ -875,8 +879,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     border: 0;
     border-left: 1px solid var(--line);
     backdrop-filter: none;
-    padding: 0 0 0 16px;
-    margin-bottom: 10px;
+    padding: 0 0 0 14px;
+    margin-bottom: 4px;
     display: none;
   }
   .nav__item.is-open .nav__menu { display: block; }
@@ -1009,11 +1013,14 @@ html[lang="zh-Hans"] .page-head__title { max-width: 24ch; }
 @media (max-width: 900px) {
   .nav .lang-btn {
     width: 100%;
-    margin-top: 18px;
-    padding: 13px;
+    margin-top: clamp(8px, 1.6vh, 18px);
+    padding: clamp(9px, 1.4vh, 13px);
     font-size: 12px;
   }
-  .nav .btn { margin-top: 12px; }
+  .nav .btn { margin-top: clamp(6px, 1vh, 12px); }
+
+  /* Submenu rows are secondary — keep them tighter than the top level. */
+  .nav__menu a { padding: clamp(6px, 1.05vh, 11px) 14px; font-size: 13.5px; }
 }
 
 /* Keep the header on one line as the nav grows. */
